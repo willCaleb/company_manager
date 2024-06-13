@@ -1,0 +1,42 @@
+api:
+  base-url: /api/v1
+
+jwt:
+  secret: "Aby$3512Ooc4R"
+
+#  spring.jpa.properties.hibernate.multiTenancy=SCHEMA
+#  spring.jpa.properties.hibernate.tenant_identifier_resolver=com.example.config.SchemaBasedTenantIdentifierResolver
+#  spring.jpa.properties.hibernate.multi_tenant_connection_provider=com.example.config.SchemaBasedMultiTenantConnectionProvider
+
+spring:
+  main:
+    allow-circular-references: true
+  redis:
+    port: 6379
+    host: localhost
+    password:
+  application:
+    name: loja
+  security:
+#    user:
+#      name: admin
+#      password: admin
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://db.fxokkuijbevkgkwekmdi.supabase.co:5432/postgres
+    username: postgres
+    password: Livia_maia06
+  jpa:
+
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        hibernate:
+          multiTenancy: SCHEMA
+          tenant_identifier_resolver: com.will.loja.config.context.TenantIdentifierResolver
+          multi_tenant_connection_provider: com.will.loja.config.context.TenantIdentifierResolver
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+

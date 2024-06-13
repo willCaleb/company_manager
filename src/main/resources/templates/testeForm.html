@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de teste</title>
+    <link rel="stylesheet" th:href="@{/css/tailwind.css}">
+</head>
+<body>
+<h1 class="mb-4 text-4xl" >Formulário de teste</h1>
+<form th:action="@{/teste}" th:object="${teste}" method="post">
+    <div>
+        <label for="teste">Nome:</label>
+        <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="teste" th:field="*{teste}" id="teste">
+    </div>
+    <div>
+        <input type="submit" value="enviar">
+    </div>
+</form>
+</body>
+</html>
